@@ -1,0 +1,1 @@
+A publisher injected in the subject is used to notify subscribers to category of events.
