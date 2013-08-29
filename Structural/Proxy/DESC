@@ -1,0 +1,1 @@
+Mimic embedded real object in order to add an additional layer (security, network access) or to offer lazy instanciation.

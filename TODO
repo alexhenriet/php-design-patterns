@@ -25,14 +25,12 @@ Stuctural
 =========
 - Aggregate
 - Bridge
-- Composite
 - Decorator
 - Extensibility
 - Facade
 - Flyweight
 - Pipes
 - Private class data
-- Proxy
 
 EAA
 ===
