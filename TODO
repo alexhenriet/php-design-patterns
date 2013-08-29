@@ -1,10 +1,8 @@
 Behavioral
 ==========
 - Chain of responsability
-- Command
 - Hierarchical visitor
 - Interpreter
-- Iterator
 - Mediator
 - Memento
 - Null object
@@ -25,7 +23,6 @@ Creational
 
 Stuctural
 =========
-- Adapter
 - Aggregate
 - Bridge
 - Composite
