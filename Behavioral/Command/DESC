@@ -1,0 +1,1 @@
+Object encapsulate treatment in a sendable Command object to be executed by another object (i.e: queue)
