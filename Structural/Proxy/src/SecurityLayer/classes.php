@@ -13,7 +13,7 @@ class CompanyERP
     }
 }
 
-class CompanyERPProxy
+class CompanyERPSecurityProxy
 {
     private $subject;
     private $roles;
@@ -32,21 +32,21 @@ class CompanyERPProxy
 
     public function getHumanResourceData()
     {
-        echo 'User : ' . $this->user . PHP_EOL;
-        if (!in_array('hr', $this->roles[$this->user])) {
-            echo 'ACCESS DENIED.' . PHP_EOL;
-            return;
-        }
+        $this->ensureRole('hr');
         $this->subject->getHumanResourceData();
     }
 
     public function getAccountingData()
     {
-        echo 'User : ' . $this->user . PHP_EOL;
-        if (!in_array('accounting', $this->roles[$this->user])) {
-            echo 'ACCESS DENIED.' . PHP_EOL;
-            return;
-        }
+        $this->ensureRole('accounting');
         $this->subject->getAccountingData();
+    }
+
+    public function ensureRole($role)
+    {
+        echo 'User : ' . $this->user . PHP_EOL;
+        if (!in_array($role, $this->roles[$this->user])) {
+            throw new \Exception('ACCESS DENIED - Data restricted to "'. $role . '" members.');
+        }
     }
 }
